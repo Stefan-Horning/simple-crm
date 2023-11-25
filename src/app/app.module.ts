@@ -12,6 +12,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { UserComponent } from './user/user.component';
+import { MatTooltipModule } from '@angular/material/tooltip';
 
 @NgModule({
   declarations: [AppComponent, DashboardComponent, UserComponent],
@@ -22,8 +23,8 @@ import { UserComponent } from './user/user.component';
     MatToolbarModule,
     MatSidenavModule,
     MatIconModule,
-    MatButtonModule
-
+    MatButtonModule,
+    MatTooltipModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
