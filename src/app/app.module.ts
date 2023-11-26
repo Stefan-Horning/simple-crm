@@ -13,9 +13,17 @@ import { MatButtonModule } from '@angular/material/button';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { UserComponent } from './user/user.component';
 import { MatTooltipModule } from '@angular/material/tooltip';
+import { DialogAddUserComponent } from './dialog-add-user/dialog-add-user.component';
+import { MatDialogModule } from '@angular/material/dialog';
+import { MatFormFieldModule } from '@angular/material/form-field';
 
 @NgModule({
-  declarations: [AppComponent, DashboardComponent, UserComponent],
+  declarations: [
+    AppComponent,
+    DashboardComponent,
+    UserComponent,
+    DialogAddUserComponent,
+  ],
   imports: [
     BrowserModule,
     AppRoutingModule,
@@ -25,6 +33,8 @@ import { MatTooltipModule } from '@angular/material/tooltip';
     MatIconModule,
     MatButtonModule,
     MatTooltipModule,
+    MatDialogModule,
+    MatFormFieldModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
