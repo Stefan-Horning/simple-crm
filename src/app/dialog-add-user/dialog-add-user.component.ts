@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import { User } from 'src/models/user.class';
 
+import { doc, addDoc } from "firebase/firestore"; 
+
 @Component({
   selector: 'app-dialog-add-user',
   templateUrl: './dialog-add-user.component.html',
@@ -15,6 +17,7 @@ export class DialogAddUserComponent {
 
   saveUser(){
     this.user.birthDate = this.birthDate.getTime();
-    console.log('Current user is' , this.user)
+    console.log('Current user is' , this.user);
+
   }
 }
