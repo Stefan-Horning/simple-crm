@@ -1,7 +1,7 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { User } from 'src/models/user.class';
 
-import { doc, addDoc } from "firebase/firestore"; 
+import {Firestore, collection, addDoc } from "firebase/firestore"; 
 
 @Component({
   selector: 'app-dialog-add-user',
@@ -11,13 +11,22 @@ import { doc, addDoc } from "firebase/firestore";
 export class DialogAddUserComponent {
   user: User = new User();
   birthDate: any;
+
+  firestore: Firestore = inject(Firestore);
   constructor(){
     
   }
 
-  saveUser(){
+  async saveUser(){
     this.user.birthDate = this.birthDate.getTime();
     console.log('Current user is' , this.user);
+    await addDoc(this.getUserRef(),this.user).catch(
+      (err) => {console.error(err)}
+    ).then((docRef) =>{console.log("Document written with ID: ", docRef?.id);})
+    
+  }
 
+  getUserRef(){
+    return collection(this.firestore, 'users');
   }
 }
