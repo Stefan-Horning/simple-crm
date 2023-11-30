@@ -1,7 +1,8 @@
 import { Component, inject } from '@angular/core';
 import { User } from 'src/models/user.class';
+import { Firestore } from '@angular/fire/firestore';
+import {collection, addDoc} from "firebase/firestore"; 
 
-import {Firestore, collection, addDoc } from "firebase/firestore"; 
 
 @Component({
   selector: 'app-dialog-add-user',

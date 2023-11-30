@@ -17,8 +17,11 @@ import { MatInputModule } from '@angular/material/input';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatNativeDateModule } from '@angular/material/core';
 import { FormsModule } from '@angular/forms';
-import { getFirestore, provideFirestore, Firestore } from '@angular/fire/firestore';
+import { getFirestore, provideFirestore} from '@angular/fire/firestore';
 import { getDatabase, provideDatabase } from '@angular/fire/database';
+import { AngularFireModule } from '@angular/fire/compat';
+import { AngularFirestoreModule } from '@angular/fire/compat/firestore';
+import { initializeApp } from "firebase/app";
 
 @NgModule({
   declarations: [
@@ -33,6 +36,8 @@ import { getDatabase, provideDatabase } from '@angular/fire/database';
     BrowserAnimationsModule,
     MatToolbarModule,
     MatSidenavModule,
+    AngularFireModule,
+    AngularFirestoreModule,
     MatIconModule,
     MatButtonModule,
     MatTooltipModule,
