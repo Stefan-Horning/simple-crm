@@ -21,7 +21,9 @@ import { getFirestore, provideFirestore} from '@angular/fire/firestore';
 import { getDatabase, provideDatabase } from '@angular/fire/database';
 import { AngularFireModule } from '@angular/fire/compat';
 import { AngularFirestoreModule } from '@angular/fire/compat/firestore';
-import { initializeApp } from "firebase/app";
+import { initializeApp, provideFirebaseApp } from '@angular/fire/app';
+import {MatProgressBarModule} from '@angular/material/progress-bar';
+import {MatCardModule} from '@angular/material/card';
 
 @NgModule({
   declarations: [
@@ -32,6 +34,7 @@ import { initializeApp } from "firebase/app";
   ],
   imports: [
     BrowserModule,
+    MatCardModule,
     AppRoutingModule,
     BrowserAnimationsModule,
     MatToolbarModule,
@@ -39,6 +42,7 @@ import { initializeApp } from "firebase/app";
     AngularFireModule,
     AngularFirestoreModule,
     MatIconModule,
+    MatProgressBarModule,
     MatButtonModule,
     MatTooltipModule,
     MatDialogModule,
@@ -47,8 +51,8 @@ import { initializeApp } from "firebase/app";
     MatDatepickerModule,
     MatNativeDateModule,
     FormsModule,
+    provideFirebaseApp(() => initializeApp({"projectId":"simple-crm-98d8a","appId":"1:712918250077:web:abad57826a1aabc35e53b4","storageBucket":"simple-crm-98d8a.appspot.com","apiKey":"AIzaSyBcb-LvFE8x-T0wgwkZLA-GoHk_pNdlgUM","authDomain":"simple-crm-98d8a.firebaseapp.com","messagingSenderId":"712918250077"})),
     provideFirestore(() => getFirestore()),
-    provideDatabase(() => getDatabase()),
   ],
   providers: [],
   bootstrap: [AppComponent],
