@@ -35,6 +35,14 @@
 <div >
     <p class="inputfield over-100-div" >
         <mat-form-field appearance="outline" class="max-width">
+            <mat-label>E-mail</mat-label>
+            <input [disabled]="loading" [(ngModel)]="user.email" matInput placeholder="E-mail">
+          </mat-form-field>
+    </p>
+</div>
+<div >
+    <p class="inputfield over-100-div" >
+        <mat-form-field appearance="outline" class="max-width">
             <mat-label>Street + number</mat-label>
             <input [disabled]="loading" [(ngModel)]="user.street" matInput placeholder="Address">
           </mat-form-field>
@@ -60,7 +68,7 @@
 
 <div mat-dialog-actions>
     <div class="button-center">
-        <button mat-button >Cancel</button>
+        <button mat-button (click)="dialogRef.close()">Cancel</button>
         <button (click)="saveUser()" mat-button  cdkFocusInitial>Save</button>
     </div>
   

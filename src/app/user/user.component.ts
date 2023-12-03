@@ -15,19 +15,31 @@ import { get } from 'firebase/database';
 export class UserComponent {
   firestore: Firestore = inject(Firestore);
   user: User = new User();
-  userJSON: any;
   userList: any = [];
   unsubList;
   //unsubSingle;
   constructor(public dialog: MatDialog) {
     this.unsubList = this.subUsersList();
+    
   }
 
   subUsersList(){
     return onSnapshot(this.getUserRef(), (list) =>{
+      this.userList = [];
       list.forEach(element => {
         this.userList.push(this.setUserObject(element.data(), element.id));
       });
+      if(this.userList.length >= 2){
+      this.userList.sort((a:any, b:any) => {
+        if (a.firstName < b.firstName) {
+          return -1;
+        }
+        if (a.firstName > b.firstName) {
+          return 1;
+        }
+        return 0;
+      });
+    }
     })
   }
 
@@ -40,6 +52,7 @@ export class UserComponent {
       street: obj.street || "",
       zipCode: obj.zipCode || "",
       city: obj.city || "",
+      email: obj.email || "",
     }
   }
 

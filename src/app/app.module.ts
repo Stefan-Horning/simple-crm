@@ -24,6 +24,7 @@ import { AngularFirestoreModule } from '@angular/fire/compat/firestore';
 import { initializeApp, provideFirebaseApp } from '@angular/fire/app';
 import {MatProgressBarModule} from '@angular/material/progress-bar';
 import {MatCardModule} from '@angular/material/card';
+import { UserDetailComponent } from './user-detail/user-detail.component';
 
 @NgModule({
   declarations: [
@@ -31,6 +32,7 @@ import {MatCardModule} from '@angular/material/card';
     DashboardComponent,
     UserComponent,
     DialogAddUserComponent,
+    UserDetailComponent,
   ],
   imports: [
     BrowserModule,
