@@ -12,6 +12,16 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    img{
+        height: 60px;
+        width: 100px;
+        object-fit: contain;
+
+    }
 
 }
 
