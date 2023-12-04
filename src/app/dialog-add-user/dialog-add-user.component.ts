@@ -24,7 +24,6 @@ export class DialogAddUserComponent {
     this.loading = true;
     this.user.birthDate = this.birthDate.getTime();
     this.userJSON = JSON.parse(JSON.stringify(this.user));
-    console.log('Current user is' , this.user);
     await addDoc(this.getUserRef(),this.userJSON).catch(
       (err) => {console.error(err)}
     ).then(() =>{ this.loading = false; this.dialogRef.close();})

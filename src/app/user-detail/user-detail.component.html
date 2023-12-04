@@ -1,5 +1,11 @@
 <mat-card >
     <div class="user-header">
+        <button mat-icon-button class="button" [matMenuTriggerFor]="overMenu">
+            <mat-icon>more_vert</mat-icon>
+        </button>
+        <mat-menu #overMenu="matMenu">
+            <button mat-menu-item (click)="editUserMenu()">Edit</button>
+        </mat-menu>
         <div>   
             <img src="./assets/img/profile.png" alt="">
         </div>
@@ -13,6 +19,13 @@
 </mat-card>
 
 <mat-card class="addres-card">
+    <button mat-icon-button class="button" [matMenuTriggerFor]="menu">
+        <mat-icon>more_vert</mat-icon>
+    </button>
+    <mat-menu #menu="matMenu">
+        <button mat-menu-item (click)="editAddress()">Edit</button>
+    </mat-menu>
+   
     <mat-card-header>
         <mat-card-title>Address</mat-card-title>
     </mat-card-header>

@@ -30,9 +30,16 @@
 }
 
 .addres-card{
+    position: relative;
     margin-top: 32px;
 
     p{
         margin: 0;
     }
+}
+
+.button{
+    position: absolute;
+    top: 0;
+    right: 0;
 }
